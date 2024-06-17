@@ -1,5 +1,6 @@
 package com.product.ProductManagementServices;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -8,8 +9,10 @@ import java.util.List;
 @Component
 public class ProductService {
 
+    @Autowired
+    ProductDB db;
+
 ////    List<Product> products = new ArrayList<>();
-////    ProductDB db = new ProductDB();
 //
 //    public void addProduct(Product p) {
 ////        products.add(p);
@@ -17,8 +20,8 @@ public class ProductService {
 //        db.save(p);
 //    }
 //
-    public List<Product> getAllProducts() {
-        return db.getAll();
+    public List<Products> getAllProducts() {
+        return db.findAll();
     }
 //
 //    public Product getProduct(String name) {
